@@ -1,0 +1,52 @@
+1) Посмотреть, где я: pwd
+2) Создать папку: mkdir foldername
+3) Зайти в папку: cd foldername
+4) Создать 3 папки: mkdir folder1 folder2 folder3
+5) Зайти в любую папку: cd folderpath
+6) Создать 5 файлов (3 txt, 2 json): touch file1.txt file2.txt file3.txt file1.json file2.json
+7) Создать 3 папки: mkdir folder{1..3} - команда создаёт папки folder1, folder2, folder3; mkdir -p folder1/folder2/folder3 - команда создаёт путь из трёх папок внутри какой-либо папки
+8) Вывести список содержимого папки: ls - выводит только имена файлов; ls -l - более подробный вывод файлов; ls -la - для вывода всех файлов, в том числе скрытых
+9) Открыть любой txt файл: nano file.txt или vim file.txt
+10) Написать что-либо в текстовый файл: открыть файл в текстовом редакторе Vim, нажатием i перейти в режим ввода и набрать нужный текст
+11) Сохранить изменения и выйти: :wq
+12) Выйти из папки на уровень выше: cd ..
+13) Переместить любые 2 файла, которые вы создали, в любую другую папку: mv file.txt file.json folderpath
+14) Cкопировать любые 2 файла, которые вы создали, в любую другую папку: cp file.txt file.json folderpath
+15) Найти файл по имени: find . -name "filename"
+16) Просмотреть содержимое в реальном времени: grep шаблон filename - поиск в содержимом файла по заданному шаблону; grep -r шаблон folderpath - рекурсивный поиск во всей директории
+17) Вывести несколько первых строк из текстового файла: head -n file.txt (n - количество строк, которое нужно вывести)
+18) Вывести несколько последних строк из текстового файла: tail -n file.txt
+19) Просмотреть содержимое длинного файла: less filename; less -E filename - автоматический выход при достижении конца файла
+20) Вывести дату и время: date
+
+Команды для отправки http запроса на указанный сервер:
+
+1) curl https://api.quarantine.country/api/v1/regions - максимально подробный ответ сервера;
+2) curl -I https://api.quarantine.country/api/v1/regions - получать только http заголовок, а всё содержимое страницы игнорировать.
+
+Для автоматизации последовательности команд создадим текстовый файл script.txt, в котором напечатаем следующий скрипт:
+
+/bin/bash
+cd /Users/dzianispalkhouski/Desktop/QA
+mkdir folder1 folder2 folder3
+cd /Users/dzianispalkhouski/Desktop/Test
+touch 1.txt 2.txt 3.txt 1.json 2.json
+mkdir -p Junior/Medium/Senior
+ls -la
+mv 1.txt 2.txt /Users/dzianispalkhouski/Desktop/QA
+
+Далее открываем Терминал и прописываем следующие команды:
+
+1) chmod u+x script.txt - делает файл со скриптом исполняемым;
+2) ./script.txt - выполняет скрипт.
+
+
+
+
+
+
+
+
+
+
+
